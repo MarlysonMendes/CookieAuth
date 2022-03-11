@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "f4d5833f-653b-4ae9-a5e1-61327481a478": {
+      "ProjectGuid": "f4d5833f-653b-4ae9-a5e1-61327481a478",
+      "DisplayName": "Auth",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
