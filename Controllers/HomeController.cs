@@ -1,4 +1,5 @@
 ﻿using Auth.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -21,6 +22,23 @@ namespace Auth.Controllers
         public IActionResult Privacy()
         {
             return View();
+        }
+        [Authorize]
+        public IActionResult Secured()
+        {
+            return View();
+        }
+        [HttpGet("login")]
+        public IActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost("login")]
+        public IActionResult Validate(string username, string password)
+        {
+            if (username == "bob" && password == "pizza") return Ok();
+
+            return BadRequest();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
