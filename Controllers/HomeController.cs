@@ -1,7 +1,10 @@
 ﻿using Auth.Models;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Security.Claims;
 
 namespace Auth.Controllers
 {
@@ -35,12 +38,22 @@ namespace Auth.Controllers
             return View();
         }
         [HttpPost("login")]
-        public IActionResult Validate(string username, string password, string returnUrl)
+        public async Task<IActionResult> Validate(string username, string password, string returnUrl)
         {
-            if (username == "bob" && password == "pizza") 
+            ViewData["ReturnUrl"] = returnUrl;
+            if (username == "bob" && password == "pizza")
+            {
+                var claims = new List<Claim>();
+                claims.Add(new Claim("username", username));
+                claims.Add(new Claim(ClaimTypes.NameIdentifier, username));
+                var claimsIdentity = new ClaimsIdentity
+                    (claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
+                await HttpContext.SignInAsync(claimsPrincipal);
                 return Redirect(returnUrl);
-
-            return BadRequest();
+            }
+            TempData["Error"] = "Error, Username or Password is invalid";
+            return View("login");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
