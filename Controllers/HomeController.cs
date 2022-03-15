@@ -29,14 +29,16 @@ namespace Auth.Controllers
             return View();
         }
         [HttpGet("login")]
-        public IActionResult Login()
+        public IActionResult Login(string returnUrl)
         {
+            ViewData["ReturnUrl"] = returnUrl;
             return View();
         }
         [HttpPost("login")]
-        public IActionResult Validate(string username, string password)
+        public IActionResult Validate(string username, string password, string returnUrl)
         {
-            if (username == "bob" && password == "pizza") return Ok();
+            if (username == "bob" && password == "pizza") 
+                return Redirect(returnUrl);
 
             return BadRequest();
         }
