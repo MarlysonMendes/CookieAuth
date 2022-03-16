@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "RwXFZl4WyDLvH4fB6XA0jVbyfr0qya8CFY4OtcjaA6L36QE7tEIY5NxdbfgL9oveMa5dJ8Uk6UyyrQShFxM3rQ==",
+  "dgSpecHash": "bnx9e/l1d3hM46XMAQgvuQvXbYMg5cl/TtigE04LHgMqoIV97K7L6z7v0/l8mcmeqPUs/heQswnnoVK5MrjiLQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\marly\\Desktop\\Projetos .NET\\Auth\\Auth.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\marly\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\6.0.3\\microsoft.aspnetcore.authentication.google.6.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

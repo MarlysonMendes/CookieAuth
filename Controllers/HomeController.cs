@@ -26,7 +26,14 @@ namespace Auth.Controllers
         {
             return View();
         }
-        [Authorize]
+
+        [HttpGet("denied")]
+        public IActionResult Denied()
+        {
+            return View();
+        }
+
+        [Authorize(Roles ="Admin")]
         public IActionResult Secured()
         {
             return View();
@@ -54,6 +61,12 @@ namespace Auth.Controllers
             }
             TempData["Error"] = "Error, Username or Password is invalid";
             return View("login");
+        }
+        [Authorize]
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync();
+            return Redirect("/");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

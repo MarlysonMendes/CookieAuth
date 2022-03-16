@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
+using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,31 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     .AddCookie(options =>
     {
         options.LoginPath = "/login";
+        options.AccessDeniedPath = "/denied";
+        options.Events = new CookieAuthenticationEvents()
+        {
+            OnSigningIn = async context =>
+            {
+                var principal = context.Principal;
+                if (principal.HasClaim(c => c.Type == ClaimTypes.NameIdentifier))
+                {
+                    if (principal.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value == "bob")
+                    {
+                        var claimsIdentity = principal.Identity as ClaimsIdentity;
+                        claimsIdentity.AddClaim(new Claim(ClaimTypes.Role, "Admin"));
+                    }
+                }
+                await Task.CompletedTask;
+            },
+            OnSignedIn = async context =>
+            {
+                await Task.CompletedTask;
+            },
+            OnValidatePrincipal = async context =>
+            {
+                await Task.CompletedTask;
+            }
+        };
     });
 
 var app = builder.Build();
