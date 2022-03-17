@@ -1,40 +1,37 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.Google;
 using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddCookie(options =>
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = "GoogleOpenId";
+    //options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
+
+}).AddCookie(options =>
     {
         options.LoginPath = "/login";
         options.AccessDeniedPath = "/denied";
-        options.Events = new CookieAuthenticationEvents()
-        {
-            OnSigningIn = async context =>
-            {
-                var principal = context.Principal;
-                if (principal.HasClaim(c => c.Type == ClaimTypes.NameIdentifier))
-                {
-                    if (principal.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value == "bob")
-                    {
-                        var claimsIdentity = principal.Identity as ClaimsIdentity;
-                        claimsIdentity.AddClaim(new Claim(ClaimTypes.Role, "Admin"));
-                    }
-                }
-                await Task.CompletedTask;
-            },
-            OnSignedIn = async context =>
-            {
-                await Task.CompletedTask;
-            },
-            OnValidatePrincipal = async context =>
-            {
-                await Task.CompletedTask;
-            }
-        };
-    });
+    })
+ .AddOpenIdConnect("GoogleOpenId", options =>
+ {
+     options.Authority = "https://accounts.google.com";
+     options.ClientId = "890344721081-h3govp4p4mjhu4k0ajt32c20fhqa2in4.apps.googleusercontent.com";
+     options.ClientSecret = "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";
+     options.CallbackPath = "/auth";
+     options.SaveTokens = true;
+ });
+    //.AddGoogle(options =>
+    //{
+    //    options.ClientId = "890344721081-h3govp4p4mjhu4k0ajt32c20fhqa2in4.apps.googleusercontent.com";
+    //    options.ClientSecret = "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";
+    //    options.CallbackPath = "/auth";
+    //    options.AuthorizationEndpoint += "?prompt=consent";
+    //});
 
 var app = builder.Build();
 
