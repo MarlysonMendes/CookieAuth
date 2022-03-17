@@ -20,15 +20,15 @@ builder.Services.AddAuthentication(options =>
  .AddOpenIdConnect("GoogleOpenId", options =>
  {
      options.Authority = "https://accounts.google.com";
-     options.ClientId = "890344721081-h3govp4p4mjhu4k0ajt32c20fhqa2in4.apps.googleusercontent.com";
-     options.ClientSecret = "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";
+     options.ClientId = "Digite o seu ClientId";
+     options.ClientSecret = "Digite o seu ClientSecret";
      options.CallbackPath = "/auth";
      options.SaveTokens = true;
  });
     //.AddGoogle(options =>
     //{
-    //    options.ClientId = "890344721081-h3govp4p4mjhu4k0ajt32c20fhqa2in4.apps.googleusercontent.com";
-    //    options.ClientSecret = "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";
+    //    options.ClientId = "Digite o seu ClientId";
+    //    options.ClientSecret = "Digite o seu ClientSecret";
     //    options.CallbackPath = "/auth";
     //    options.AuthorizationEndpoint += "?prompt=consent";
     //});
