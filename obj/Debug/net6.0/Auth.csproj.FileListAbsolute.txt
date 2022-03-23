@@ -24,3 +24,12 @@ C:\Users\marly\Desktop\Projetos .NET\Auth\obj\Debug\net6.0\Auth.dll
 C:\Users\marly\Desktop\Projetos .NET\Auth\obj\Debug\net6.0\ref\Auth.dll
 C:\Users\marly\Desktop\Projetos .NET\Auth\obj\Debug\net6.0\Auth.pdb
 C:\Users\marly\Desktop\Projetos .NET\Auth\obj\Debug\net6.0\Auth.genruntimeconfig.cache
+C:\Users\marly\Desktop\Projetos .NET\Auth\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.Google.dll
+C:\Users\marly\Desktop\Projetos .NET\Auth\obj\Debug\net6.0\Auth.csproj.CopyComplete
+C:\Users\marly\Desktop\Projetos .NET\Auth\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+C:\Users\marly\Desktop\Projetos .NET\Auth\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\marly\Desktop\Projetos .NET\Auth\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\marly\Desktop\Projetos .NET\Auth\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\marly\Desktop\Projetos .NET\Auth\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\marly\Desktop\Projetos .NET\Auth\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\marly\Desktop\Projetos .NET\Auth\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll

@@ -1,10 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "bnx9e/l1d3hM46XMAQgvuQvXbYMg5cl/TtigE04LHgMqoIV97K7L6z7v0/l8mcmeqPUs/heQswnnoVK5MrjiLQ==",
+  "dgSpecHash": "bZvj69YoX4iafRzMQN8x2ycFVgbSXiChi+kRIT2M/Refsm+1iV+W/0q98hajWbw8scP0Ox357x0xEqEc/oy/Pw==",
   "success": true,
   "projectFilePath": "C:\\Users\\marly\\Desktop\\Projetos .NET\\Auth\\Auth.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\marly\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\6.0.3\\microsoft.aspnetcore.authentication.google.6.0.3.nupkg.sha512"
+    "C:\\Users\\marly\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\6.0.3\\microsoft.aspnetcore.authentication.google.6.0.3.nupkg.sha512",
+    "C:\\Users\\marly\\.nuget\\packages\\microsoft.aspnetcore.authentication.openidconnect\\6.0.3\\microsoft.aspnetcore.authentication.openidconnect.6.0.3.nupkg.sha512",
+    "C:\\Users\\marly\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\marly\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.10.0\\microsoft.identitymodel.jsonwebtokens.6.10.0.nupkg.sha512",
+    "C:\\Users\\marly\\.nuget\\packages\\microsoft.identitymodel.logging\\6.10.0\\microsoft.identitymodel.logging.6.10.0.nupkg.sha512",
+    "C:\\Users\\marly\\.nuget\\packages\\microsoft.identitymodel.protocols\\6.10.0\\microsoft.identitymodel.protocols.6.10.0.nupkg.sha512",
+    "C:\\Users\\marly\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\6.10.0\\microsoft.identitymodel.protocols.openidconnect.6.10.0.nupkg.sha512",
+    "C:\\Users\\marly\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.10.0\\microsoft.identitymodel.tokens.6.10.0.nupkg.sha512",
+    "C:\\Users\\marly\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.10.0\\system.identitymodel.tokens.jwt.6.10.0.nupkg.sha512",
+    "C:\\Users\\marly\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }
